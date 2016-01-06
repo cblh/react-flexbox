@@ -10,6 +10,19 @@ var {
   ScrollView,
 } = React;
 
+var BUIcon = [
+	'https://raw.githubusercontent.com/vczero/vczero.github.io/master/ctrip/%E6%9C%AA%E6%A0%87%E9%A2%98-1.png',
+	'https://raw.githubusercontent.com/vczero/vczero.github.io/master/ctrip/feiji.png',
+	'https://raw.githubusercontent.com/vczero/vczero.github.io/master/ctrip/lvyou.png',
+	'https://raw.githubusercontent.com/vczero/vczero.github.io/master/ctrip/gonglue.png'
+
+];
+
+var Images = [
+	'http://webresource.c-ctrip.com/ResCRMOnline/R5/html5/images/zzz_pic_salead01.png',
+	'http://images3.c-ctrip.com/rk/apph5/B1/201505/app_home_ad06_310_120.jpg'
+];
+
 var styles = StyleSheet.create({
 //container
 container: {
@@ -19,10 +32,10 @@ container: {
 //slider
 wrapper: {
 //marginTop: 10090,
-height:160,
+height:80,
 },
 slide: {
-    height:160,
+    height:80,
     resizeMode: Image.resizeMode.contain,
 },
 //sbu
@@ -125,9 +138,23 @@ var Slider = React.createClass({
 var Index = React.createClass({
   render: function(){
     return (
+      <ScrollView>
       <View style={[styles.container]}>
         <Slider/>
+	<View style={[styles.sbu_red, styles.sbu_view]}>
+	<TouchableHighlight underlayColor={'#FA6778'} style={{flex:1}}>
+          <View style={[styles.sbu_flex, styles.sbu_borderRight]}>
+            <View style={[styles.sub_con_flex, styles.sub_text]}>
+              <Text style={[styles.font16]}>酒店</Text>
+            </View>
+            <View style={[styles.sub_con_flex]}>
+              <Image style={[styles.sbu_icon_img]} source={{uri:BUIcon[0]}}></Image>
+            </View>
+          </View>
+        </TouchableHighlight>
+        </View>
       </View>
+      </ScrollView>
     );
   }
 });
